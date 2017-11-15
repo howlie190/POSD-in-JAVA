@@ -83,4 +83,14 @@ class utTest {
 		assertEquals("1", list.head().symbol());
 		assertEquals("[2, 3]", list.tail().symbol());
 	}
+	@Test
+	void SymbolTableTesting() {
+		SymbolTable symbolTable = new SymbolTable();
+		String symbol = "X";
+		Val val = new Val(-1);
+		assertFalse(symbolTable.symbolExist(symbol, val));
+		symbolTable.getSymbolTable().add(new pair(symbol, 259));
+		assertTrue(symbolTable.symbolExist(symbol, val));
+		assertEquals(0, val.getVal());
+	}
 }

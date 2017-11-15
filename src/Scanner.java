@@ -5,9 +5,9 @@ public class Scanner {
 	private int _position;
 	private int _tokenValue;
 	private void processToken(String s, int tokenTyoe) {
-		Integer val = -1;
+		Val val = new Val(-1);
 		if(_symbolTable.symbolExist(s, val))
-			_tokenValue = val;
+			_tokenValue = val.getVal();
 		else {
 			_symbolTable.getSymbolTable().add(new pair(s, tokenTyoe));
 			_tokenValue = _symbolTable.getSymbolTable().size() - 1;
